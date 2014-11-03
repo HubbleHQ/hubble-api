@@ -20,8 +20,93 @@
 
 * **Success Response:**
 	* **Code:** 200 <br />
-	  **Content:**
+	* **Content:**
+  ```
+    [
+    	{
+	    	id : [integer],
+	    	title : [string],
+	    	description : [string],
+	    	address : [string],
+	    	postcode : [string],
+	    	is_active : [boolean],
+	    	is_promoted : [boolean],
+	    	geocoordinates : [string (latitude, longitude)],
+	    	images : [
+	    		{
+	    			url : [string (absolute URL)],
+	    			thumbnail : [boolean],
+	    			cover : [boolean]
+	    		},
+	    		{
+	    			url : [string (absolute URL)],
+	    			thumbnail : [boolean],
+	    			cover : [boolean]
+	    		},
+	    		{
+	    			url : [string (absolute URL)],
+	    			thumbnail : [boolean],
+	    			cover : [boolean]
+	    		}
+	    	],
+	    	facilities : [
+	    		{
+	    			icon: [string (absolute URL)],
+	    			id: integer,
+	    			name: [string]
+	    		},
+	    		{
+	    			icon: [string (absolute URL)],
+	    			id: integer,
+	    			name: [string]
+	    		}
+	    	],
+	    	offices : [
+	    		{
+	    			title : [string],
+	    			capacity : [integer],
+	    			min_people : [integer OR null],
+	    			max_people : [integer OR null],
+	    			base_price : [number],
+	    			price_type : [string],
+	    			available_from : [string (date in ISO 8601 format)],
+	    			minimum_stay_months : [number],
+	    			space_type : [string (Private Office OR )],
+	    			comments : [string],
+	    			is_filled : [boolean]
+	    		}
+	    	]
+	    }, {
+	    ... [more spaces]
+	    }]
+  ```
+
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND <br />
+    **Content:** `{ error : "User doesn't exist" }`
+
+  OR
+
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "You are unauthorized to make this request." }`
+
+* **Example Call:**
+
   ```javascript
+    $.ajax({
+      url: "/users/1",
+      dataType: "json",
+      type : "GET",
+      success : function(r) {
+        console.log(r);
+      }
+    });
+  ```
+* **Example Response:**
+	* **Code:** 200 <br />
+	* **Content:**
+  ```
     [
     	{
 	    	id : 412,
@@ -75,35 +160,10 @@
 	    			is_filled : 0
 	    		}
 	    	]
-	    }, {}]
-  ```
-
-* **Error Response:**
-
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
-
-  OR
-
-  * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
-
-* **Sample Call:**
-
-  ```javascript
-    $.ajax({
-      url: "/users/1",
-      dataType: "json",
-      type : "GET",
-      success : function(r) {
-        console.log(r);
-      }
-    });
+	    }, {
+	    ... [more spaces]
+	    }]
   ```
 
 * **Notes:**
-
-	* all calls should include your api key as a query parameter in the url. e.g.
-	`http://spaciousapp.com/api/space-list/?api_key=abcdefghijklmnopqrstuvwxyz`
-	
 	* available_from date will be provided in ISO 8601 format
