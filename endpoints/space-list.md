@@ -71,7 +71,7 @@
 	    			price_type : [string],
 	    			available_from : [string (date in ISO 8601 format)],
 	    			minimum_stay_months : [number],
-	    			space_type : [string (Private Office OR )],
+	    			space_type : [string (Hot Desk OR Shared OR Private)],
 	    			comments : [string],
 	    			is_filled : [boolean]
 	    		}
@@ -83,19 +83,16 @@
 
 * **Error Response:**
 
-  * **Code:** 404 NOT FOUND <br />
-    **Content:** `{ error : "User doesn't exist" }`
-
-  OR
-
   * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : "You are unauthorized to make this request." }`
+    **Content:** `{ error : "API key is invalid."}`
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : "API key not provided."}`
 
 * **Example Call:**
 
   ```javascript
     $.ajax({
-      url: "/users/1",
+      url: "http://spaciousapp.com/api/space-list/?api_key=your_api_key",
       dataType: "json",
       type : "GET",
       success : function(r) {
@@ -166,4 +163,3 @@
   ```
 
 * **Notes:**
-	* available_from date will be provided in ISO 8601 format
