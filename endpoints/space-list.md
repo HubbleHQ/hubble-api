@@ -21,7 +21,7 @@
 * **Success Response:**
 	* **Code:** 200 <br />
 	* **Content:**
-  ```
+  ```javascript
     [
     	{
 	    	id : [integer],
@@ -106,7 +106,7 @@
 * **Example Response:**
 	* **Code:** 200 <br />
 	* **Content:**
-  ```
+  ```javascript
     [
     	{
 	    	id : 412,
