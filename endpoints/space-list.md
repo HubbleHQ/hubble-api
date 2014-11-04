@@ -1,5 +1,4 @@
 **List Available Spaces**
-----
 	Returns json list of all spaces with availability
 
 * **URL**
@@ -35,18 +34,18 @@
 	    	images : [
 	    		{
 	    			url : [string (absolute URL)],
-	    			thumbnail : [boolean],
-	    			cover : [boolean]
+	    			thumbnail : [boolean OR null],
+	    			cover : [boolean OR null]
 	    		},
 	    		{
 	    			url : [string (absolute URL)],
-	    			thumbnail : [boolean],
-	    			cover : [boolean]
+	    			thumbnail : [boolean OR null],
+	    			cover : [boolean OR null]
 	    		},
 	    		{
 	    			url : [string (absolute URL)],
-	    			thumbnail : [boolean],
-	    			cover : [boolean]
+	    			thumbnail : [boolean OR null],
+	    			cover : [boolean OR null]
 	    		}
 	    	],
 	    	facilities : [
