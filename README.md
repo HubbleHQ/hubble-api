@@ -10,7 +10,7 @@ API access is available to partners who have been issued with an API key. If you
 *	all endpoints are accessible at `http://spaciousapp.com/api/`
 *	all calls should include your api key as a query parameter in the url. e.g.
 	```
-	http://spaciousapp.com/api/space-list/?api_key=abcdefghijklmnopqrstuvwxyz
+	http://host.spaciousapp.com/api/space-list/?api_key=abcdefghijklmnopqrstuvwxyz
 	```
 
 ## Endpoints
