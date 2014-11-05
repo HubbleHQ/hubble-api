@@ -85,7 +85,7 @@
 
   ```javascript
     $.ajax({
-      url: "http://host.spaciousapp.com/api/v1/space-list/?api_key=your_api_key",
+      url: "http://host.spaciousapp.com/api/v1/spaces-list/?api_key=your_api_key",
       dataType: "json",
       type : "GET",
       success : function(r) {
