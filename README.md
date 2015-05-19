@@ -14,4 +14,5 @@ API access is available to partners who have been issued with an API key. If you
 	```
 
 ## Endpoints
-* `GET` [spaces](./endpoints/spaces.md)
+* `GET` [spaces](./endpoints/spaces.md) *(DEPRECATED - USE [QUERY](./endpoints/query.md) INSTEAD)*
+* `GET` [query](./endpoints/query.md)
