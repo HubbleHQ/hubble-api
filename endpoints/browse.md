@@ -4,7 +4,7 @@ Returns a json list of available offices
 
 * **URL**
 
-    /api/v2/query
+    /api/v2/browse
 
 * **Method:**
 
@@ -17,7 +17,6 @@ Returns a json list of available offices
     * `minPrice` maximum monthly price in GBP e.g. `1950`
     * `people` the number of desks required in an office e.g. `6`
     * `spaceType` comma-separated list of space types to accept e.g. `private_office,coworking`. Options: `private_office`, `coworking`, `shared_office`
-    * `filterDuplicates` whether duplicate results should be removed from results e.g. `true`
     * `lat` latitude of search area e.g. `51.5133`. Must be used in combination with `lon`
     * `lon` longitude of search area e.g. `-0.0886`. Must be used in combination with `lat`
     * `radius` the search area radius, only used in combination with `lon` and `lat`. e.g. `1km`
@@ -37,18 +36,6 @@ Returns a json list of available offices
             id : [integer],
             activationState: [string],
             url: [string (absolute URL)],
-            host: {
-                id: [integer],
-                name: [string],
-                firstName: [string],
-                lastName: [string],
-                company: [string],
-                serviced_office_provider: [boolean],
-                avatar: [string (absolute URL)],
-                has_phone_numer: [boolean],
-                response_percentage: [number],
-                average_response_time: [integer (seconds)]
-            },
             name: [string],
             description : [string],
             summary : [string],
@@ -107,7 +94,7 @@ Returns a json list of available offices
 
   ```javascript
     $.ajax({
-      url: "https://api.hubblehq.com/api/v2/query?api_key=your_api_key&minPrice=350&maxPrixe=2000&people=11&spaceType=Shared%20Office&facilities=Wi-fi",
+      url: "https://api.hubblehq.com/api/v2/browse?api_key=your_api_key&minPrice=350&maxPrixe=2000&people=11&spaceType=Shared%20Office&facilities=Wi-fi",
       dataType: "json",
       type : "GET",
       success : function(r) {
